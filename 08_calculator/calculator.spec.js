@@ -15,13 +15,13 @@ describe('add', () => {
 });
 
 describe('subtract', () => {
-  test.skip('subtracts numbers', () => {
+  test('subtracts numbers', () => {
     expect(calculator.subtract(10, 4)).toBe(6);
   });
 });
 
 describe('sum', () => {
-  test.skip('computes the sum of an empty array', () => {
+  test('computes the sum of an empty array', () => {
     expect(calculator.sum([])).toBe(0);
   });
 
