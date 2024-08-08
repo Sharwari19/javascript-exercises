@@ -1,15 +1,12 @@
 const sumAll = function(startPoint, endPoint) {
 
-    let i = startPoint;
     let iSum = 0;
     let isStartInteger =  Number.isInteger(startPoint);
     let isEndInteger = Number.isInteger(endPoint);
 
-    if( startPoint < 0                    || 
-        endPoint < 0                      || 
-        !(typeof startPoint === "number") ||
-        !(typeof endPoint === "number")   ||
-        !isStartInteger                   ||
+    if( startPoint < 0    || 
+        endPoint < 0      || 
+        !isStartInteger   ||
         !isEndInteger 
     )
     {
@@ -18,17 +15,20 @@ const sumAll = function(startPoint, endPoint) {
 
     if(startPoint > endPoint)
     {
-        for(i = startPoint; i >= endPoint; i--)
-        {
-            iSum = iSum + i;
-        }
+        let temp = startPoint;
+        startPoint = endPoint;
+        endPoint = temp;
     }
-    else
+
+    // OR
+    // if(startPoint > endPoint)
+    // {
+    //     [startPoint, endPoint] = [endPoint, startPoint]
+    // }
+
+    for(i = startPoint; i <= endPoint; i++)
     {
-        for(i = startPoint; i <= endPoint; i++)
-        {
-            iSum = iSum + i;
-        }
+        iSum = iSum + i;
     }
 
     return iSum;
